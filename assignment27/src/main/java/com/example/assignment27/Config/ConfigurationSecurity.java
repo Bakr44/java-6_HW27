@@ -40,8 +40,6 @@ public class ConfigurationSecurity {
                 .authorizeHttpRequests()
 
                 .requestMatchers(HttpMethod.POST, "/api/v1/auth/register").permitAll()
-
-                .requestMatchers("/api/v1/auth/admin").hasAuthority("ADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .logout().logoutUrl("/api/v1/auth/logout")
